@@ -28,7 +28,7 @@ public class Main {
 		
 		//오름차순 정렬
 		System.out.println("Student List (ordered by name)");
-		Collections.sort(list);
+		Collections.sort(list, new StudentComparator());
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).toString());
 		}
@@ -36,7 +36,7 @@ public class Main {
 		System.out.println();
 		//내림차순 정렬
 		System.out.println("Student List (reverse ordered by name)");
-		Collections.sort(list, Collections.reverseOrder());
+		Collections.sort(list, new StudentComparatorDesc());
 		for (Student ss : list) {
 			System.out.println(ss.toString());
 		}
