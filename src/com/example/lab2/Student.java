@@ -1,9 +1,10 @@
 package com.example.lab2;
+import java.util.Comparator;
 
 public class Student implements Comparable<Student>{
-	private int no;
-	private String name;
-	private int age;
+	int no;
+	String name;
+	int age;
 	
 	public Student() {}
 	public Student(int no, String name, int age) {
@@ -43,4 +44,20 @@ public class Student implements Comparable<Student>{
 		return name.compareTo(o.name);
 	}
 	
+}
+
+class StudentComparator implements Comparator <Student> {
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		return o1.name.compareTo(o2.name);
+	}
+}
+
+class StudentComparatorDesc implements Comparator <Student> {
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		return o2.name.compareTo(o1.name);
+	}
 }
